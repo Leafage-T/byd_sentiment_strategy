@@ -1,0 +1,15 @@
+# PyCharm本地工程配置
+.idea/
+# Python缓存文件
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+# 系统隐藏文件
+.DS_Store
+Thumbs.db
+# 临时日志
+*.log
+tmp/
+# 大数据库文件不上传
+# *.db
