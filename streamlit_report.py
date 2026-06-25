@@ -15,6 +15,11 @@ streamlit_report.py
 作者：王淑璐 · 赵梦婷    课程：财经数据分析
 ================================================================
 """
+import matplotlib.pyplot as plt
+
+# 适配Streamlit云端免费字体
+plt.rcParams["font.sans-serif"] = ["WenQuanYi Zen Hei"]
+plt.rcParams["axes.unicode_minus"] = False # 解决负号显示方块
 
 from pathlib import Path
 
@@ -24,11 +29,7 @@ import streamlit as st
 
 import matplotlib
 import matplotlib.font_manager as fm
-import matplotlib.pyplot as plt
 
-# 适配Streamlit云端免费字体
-plt.rcParams["font.sans-serif"] = ["WenQuanYi Zen Hei"]
-plt.rcParams["axes.unicode_minus"] = False # 解决负号显示方块
 
 # ----------------------- 字体全局统一缩小配置 -----------------------
 plt.rcParams['font.size'] = 10
