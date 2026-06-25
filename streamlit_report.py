@@ -46,7 +46,6 @@ CSV_PATH = HERE / 'backtest_result.csv'
 METRICS_PATH = HERE / 'metrics_summary.csv'
 DASHBOARD_PNG = HERE / 'dashboard_demo.png'
 
-
 # ----------------------- 数据加载 -----------------------
 @st.cache_data(ttl=60)
 def load_data():
