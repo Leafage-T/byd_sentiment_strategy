@@ -1,4 +1,4 @@
-akshare==1.16.90
+akshare==1.12.90
 pandas
 numpy
 requests
@@ -6,4 +6,3 @@ beautifulsoup4
 snownlp
 streamlit
 matplotlib
-fonttools
