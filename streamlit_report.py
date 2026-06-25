@@ -26,6 +26,10 @@ import matplotlib
 import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
 
+# 适配Streamlit云端免费字体
+plt.rcParams["font.sans-serif"] = ["WenQuanYi Zen Hei"]
+plt.rcParams["axes.unicode_minus"] = False # 解决负号显示方块
+
 # ----------------------- 字体全局统一缩小配置 -----------------------
 plt.rcParams['font.size'] = 10
 for fp in [
