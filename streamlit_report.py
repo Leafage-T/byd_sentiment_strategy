@@ -32,6 +32,7 @@ import matplotlib.font_manager as fm
 
 
 # ----------------------- 字体全局统一缩小配置 -----------------------
+'''
 plt.rcParams['font.size'] = 10
 for fp in [
     '/usr/share/fonts/truetype/chinese/NotoSansSC-Regular.ttf',
@@ -44,7 +45,7 @@ for fp in [
             pass
 plt.rcParams['font.sans-serif'] = ['Noto Sans SC', 'DejaVu Sans', 'SimHei']
 plt.rcParams['axes.unicode_minus'] = False
-
+'''
 # ----------------------- 路径 -----------------------
 HERE = Path(__file__).resolve().parent
 CSV_PATH = HERE / 'backtest_result.csv'
@@ -204,7 +205,7 @@ def page_topic():
             'Streamlit 交互面板',
         ],
     })
-    st.dataframe(match_table, hide_index=True, use_container_width=True)
+    st.dataframe(match_table, hide_index=True, width="stretch")
 
     st.subheader('3. 为什么选单只股研究')
     col1, col2 = st.columns(2)
@@ -259,7 +260,7 @@ def page_data():
         '时间跨度': ['2020-01 ~ 2026-06', '2020-01 ~ 2026-06', '2020-01 ~ 2026-06'],
         '行数(示例)': ['~1,500', '~1,500', '~1,500'],
     })
-    st.dataframe(schema, hide_index=True, use_container_width=True)
+    st.dataframe(schema, hide_index=True, width="stretch")
 
     st.subheader('2. 清洗与入库逻辑')
     flow = pd.DataFrame({
@@ -289,7 +290,7 @@ def page_data():
             '三表：daily_quotes / valuation / sentiment',
         ],
     })
-    st.dataframe(flow, hide_index=True, use_container_width=True)
+    st.dataframe(flow, hide_index=True, width="stretch")
 
     st.subheader('3. 数据库表结构')
     st.code(
@@ -337,7 +338,7 @@ def page_strategy():
         ],
         '用途': ['短期均线', '中期均线', '趋势动能', '超买超卖'],
     })
-    st.dataframe(ind_table, hide_index=True, use_container_width=True)
+    st.dataframe(ind_table, hide_index=True, width="stretch")
 
     st.subheader('2. 开仓条件（三者同时满足）')
     c1, c2, c3 = st.columns(3)
@@ -380,7 +381,7 @@ def page_strategy():
             '国际惯例',
         ],
     })
-    st.dataframe(constraint, hide_index=True, use_container_width=True)
+    st.dataframe(constraint, hide_index=True, width="stretch")
 
     st.subheader('5. 信号生成伪代码')
     st.code(
@@ -417,12 +418,12 @@ def page_results():
         c1, c2 = st.columns(2)
         with c1:
             st.markdown('**训练集（2020-2025）**')
-            st.dataframe(train, hide_index=True, use_container_width=True)
+            st.dataframe(train, hide_index=True, width="stretch")
         with c2:
             st.markdown('**样本外（2026）**')
-            st.dataframe(sample, hide_index=True, use_container_width=True)
+            st.dataframe(sample, hide_index=True, width="stretch")
         st.markdown('**全样本（2020-2026）**')
-        st.dataframe(full, hide_index=True, use_container_width=True)
+        st.dataframe(full, hide_index=True, width="stretch")
     else:
         st.warning('未找到 metrics_summary.csv，请先运行 strategy_backtest.py')
 
@@ -600,7 +601,7 @@ def page_summary():
             'data → backtest → dashboard → report',
         ],
     })
-    st.dataframe(pros, hide_index=True, use_container_width=True)
+    st.dataframe(pros, hide_index=True, width="stretch")
 
     st.subheader('3. 缺点')
     cons = pd.DataFrame({
@@ -619,7 +620,7 @@ def page_summary():
             '可能存在过拟合风险',
         ],
     })
-    st.dataframe(cons, hide_index=True, use_container_width=True)
+    st.dataframe(cons, hide_index=True, width="stretch")
 
     st.subheader('4. 改进方向')
     improve_table = pd.DataFrame({
@@ -638,7 +639,7 @@ def page_summary():
             '适应市场风格切换',
         ],
     })
-    st.dataframe(improve_table, hide_index=True, use_container_width=True)
+    st.dataframe(improve_table, hide_index=True, width="stretch")
 
     st.subheader('5. 课程体会')
     st.info(
